@@ -15,6 +15,7 @@
 		845026B61E9555570040C8EA /* Sprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845026B51E9555570040C8EA /* Sprite.swift */; };
 		845026B81E95558D0040C8EA /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845026B71E95558D0040C8EA /* Vector.swift */; };
 		845026BB1E9577740040C8EA /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845026BA1E9577740040C8EA /* GLKit.framework */; };
+		84ED943F1E96D53D00817045 /* StaticSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED943E1E96D53D00817045 /* StaticSprite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		845026B51E9555570040C8EA /* Sprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sprite.swift; sourceTree = "<group>"; };
 		845026B71E95558D0040C8EA /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		845026BA1E9577740040C8EA /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		84ED943E1E96D53D00817045 /* StaticSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticSprite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				845026951E9555370040C8EA /* AppDelegate.swift */,
 				845026971E9555370040C8EA /* ViewController.swift */,
 				845026B51E9555570040C8EA /* Sprite.swift */,
+				84ED943E1E96D53D00817045 /* StaticSprite.swift */,
 				845026B71E95558D0040C8EA /* Vector.swift */,
 				8450269C1E9555370040C8EA /* Assets.xcassets */,
 				8450269E1E9555370040C8EA /* LaunchScreen.storyboard */,
@@ -219,6 +222,7 @@
 				845026B61E9555570040C8EA /* Sprite.swift in Sources */,
 				845026B81E95558D0040C8EA /* Vector.swift in Sources */,
 				845026961E9555370040C8EA /* AppDelegate.swift in Sources */,
+				84ED943F1E96D53D00817045 /* StaticSprite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +426,7 @@
 				845026B11E9555370040C8EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		845026B21E9555370040C8EA /* Build configuration list for PBXNativeTarget "RaptorTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +435,7 @@
 				845026B41E9555370040C8EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
