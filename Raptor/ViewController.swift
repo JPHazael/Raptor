@@ -9,6 +9,13 @@
 import GLKit
 
 class ViewController: GLKViewController {
+    
+    
+    
+    private var _program: GLuint = 0
+
+    private var _translateX: Float = 0.0
+    private var _translateY: Float = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +41,10 @@ class ViewController: GLKViewController {
     private func setup(){
         glClearColor(0.50, 0.35, 0.73, 1.0)
         
-        let vertexShaderSource: NSString = "attribute vec2 position; \n" + "void main() \n"
+        let vertexShaderSource: NSString = "attribute vec2 position; \n uniform vec2 translate; \n"
+        + "void main() \n"
         + "{ \n" +
-        "    gl_Position = vec4(position.x, position.y, 0.0, 1.0);  \n" +
+        "    gl_Position = vec4(position.x + translate.x, position.y + translate.y, 0.0, 1.0);  \n" +
         " }\n" as NSString
         
  
@@ -107,17 +115,17 @@ class ViewController: GLKViewController {
         
         //Link the shaders into a program and upload it into the GPU
         
-        let program: GLuint = glCreateProgram()
+        _program = glCreateProgram()
         
-        glAttachShader(program, GLuint(vertexShader))
-        glAttachShader(program, GLuint(fragmentShader))
+        glAttachShader(_program, GLuint(vertexShader))
+        glAttachShader(_program, GLuint(fragmentShader))
         
-        glBindAttribLocation(program, 0, "position")
-        glLinkProgram(program)
+        glBindAttribLocation(_program, 0, "position")
+        glLinkProgram(_program)
         
         var programLinkStatus: GLint = GL_FALSE
         
-        glGetProgramiv(program, GLenum(GL_LINK_STATUS), &programLinkStatus)
+        glGetProgramiv(_program, GLenum(GL_LINK_STATUS), &programLinkStatus)
         
         if programLinkStatus == GL_FALSE{
             
@@ -135,7 +143,7 @@ class ViewController: GLKViewController {
         }
         
         
-        glUseProgram(program)
+        glUseProgram(_program)
         glEnableVertexAttribArray(0)
         
         
@@ -157,16 +165,32 @@ class ViewController: GLKViewController {
         glClear(GLbitfield(GL_COLOR_BUFFER_BIT))
         
         
+        
         // the default open GL coordinate system is -1 to 1 in x and -1 to 1 in y
         let triangle: [Float] = [
-        0.0, 0.0, 1.0, 0.0, 0.0, 1.0
+        -0.5, 0.0,
+        0.0, 0.0,
+        0.0, 0.5
         ]
+        
+        _translateX += 0.01
+        _translateY -= 0.005
         
         
         //draw a triangle
         glVertexAttribPointer(0, 2, GLenum(GL_FLOAT), GLboolean(GL_FALSE), 0, triangle)
+        glUniform2f(glGetUniformLocation(_program, "translate"), _translateX, _translateY)
         glDrawArrays(GLenum(GL_TRIANGLES), 0, 3)
         
+        glUniform2f(glGetUniformLocation(_program, "translate"), _translateX, -_translateY)
+        glDrawArrays(GLenum(GL_TRIANGLES), 0, 3)
+        
+        
+        glUniform2f(glGetUniformLocation(_program, "translate"), -_translateX, -_translateY)
+        glDrawArrays(GLenum(GL_TRIANGLES), 0, 3)
+        
+        glUniform2f(glGetUniformLocation(_program, "translate"), -_translateX, _translateY)
+        glDrawArrays(GLenum(GL_TRIANGLES), 0, 3)
         
     }
 }
