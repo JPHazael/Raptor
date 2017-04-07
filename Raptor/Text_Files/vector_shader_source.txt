@@ -1,0 +1,7 @@
+attribute vec2 position; \n
+uniform vec2 translate; \n
+uniform vec2 scale; \n
+void main() \n
+{ \n
+    gl_Position = vec4(position.x * scale.x + translate.x, position.y * scale.y + translate.y, 0.0, 1.0);  \n
+}\n

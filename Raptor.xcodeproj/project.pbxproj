@@ -16,6 +16,7 @@
 		845026B81E95558D0040C8EA /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845026B71E95558D0040C8EA /* Vector.swift */; };
 		845026BB1E9577740040C8EA /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845026BA1E9577740040C8EA /* GLKit.framework */; };
 		84ED943F1E96D53D00817045 /* StaticSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED943E1E96D53D00817045 /* StaticSprite.swift */; };
+		84ED94471E97F94100817045 /* Text_Files in Resources */ = {isa = PBXBuildFile; fileRef = 84ED94461E97F94100817045 /* Text_Files */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		845026B71E95558D0040C8EA /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		845026BA1E9577740040C8EA /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		84ED943E1E96D53D00817045 /* StaticSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticSprite.swift; sourceTree = "<group>"; };
+		84ED94461E97F94100817045 /* Text_Files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Text_Files; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				845026B51E9555570040C8EA /* Sprite.swift */,
 				84ED943E1E96D53D00817045 /* StaticSprite.swift */,
 				845026B71E95558D0040C8EA /* Vector.swift */,
+				84ED94461E97F94100817045 /* Text_Files */,
 				8450269C1E9555370040C8EA /* Assets.xcassets */,
 				8450269E1E9555370040C8EA /* LaunchScreen.storyboard */,
 				845026A11E9555370040C8EA /* Info.plist */,
@@ -199,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84ED94471E97F94100817045 /* Text_Files in Resources */,
 				845026A01E9555370040C8EA /* LaunchScreen.storyboard in Resources */,
 				8450269D1E9555370040C8EA /* Assets.xcassets in Resources */,
 			);
