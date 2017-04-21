@@ -61,24 +61,25 @@ extension Sprite{
         //Create and compile fragment shader
         
         
-//        let fragmentShaderFilename = "fragment_shader_source"
-//        var fileString: NSString = ""
-//
-//        
-//        if let fragmentShaderFilePath = Bundle.main.path(forResource: fragmentShaderFilename, ofType: "txt", inDirectory: "Text_Files") {
-//            do {
-//                fileString = try! NSString(contentsOfFile: fragmentShaderFilePath, encoding: String.Encoding.utf8.rawValue)
-//            }
-//            
-//        }
-//        
-//        let fragmentShaderSource = fileString as NSString
+        let fragmentShaderFilename = "fragment_shader_source"
+        //var fileString: NSString = ""
+
+        func getShaderSource(fileName: String) -> NSString{
+          
+            let fragmentShaderFilePath = Bundle.main.path(forResource: fragmentShaderFilename, ofType: "txt", inDirectory: "Text_Files")
+            do {
+              return try! NSString(contentsOfFile: fragmentShaderFilePath!, encoding: String.Encoding.utf8.rawValue)
+            }
+        }
+        
+        
+            print(getShaderSource(fileName: fragmentShaderFilename))
 ////        print(fragmentShaderSource1)
 ////        
-        let fragmentShaderSource: NSString = " uniform highp vec4 color; \n " +
-            "void main() \n{ \n" +
-            "    gl_FragColor = color;  \n" +
-            " }\n" as NSString
+//        let fragmentShaderSource: NSString = " uniform highp vec4 color; \n " +
+//            "void main() \n{ \n" +
+//            "    gl_FragColor = color;  \n" +
+//            " }\n" as NSString
         
         
         
